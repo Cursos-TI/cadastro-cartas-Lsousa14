@@ -16,6 +16,7 @@ int main() {
      int pontosturisticos1, pontosturisticos2;
      float densidadepopulacional1, densidadepopulacional2;
      float pibpercapita1, pibpercapita2;
+     float superpoder1, superpoder2;
 
 
   // Área para entrada de dados
@@ -74,7 +75,12 @@ int main() {
 
 
      float densidade2 = populacao2 / area2;
-     float pipercapita2 = (pib2*1000000000) / populacao2; 
+     float pipercapita2 = (pib2*1000000000) / populacao2;
+     
+     superpoder1 = (float)populacao1 + area1 +(float)pib1 + pontosturisticos1 + pibpercapita1 + (1.0f/ densidade1);
+
+     superpoder2 = (float)populacao2 + area2 +(float)pib2 + pontosturisticos2 + pibpercapita2 + (1.0f/ densidade2);
+
 
 
 
@@ -92,7 +98,7 @@ printf("\n--- Dados da carta 1 ---\n");
      printf("pib per capita: %.2f reais\n", pibpercapita1);
     
      
-     
+   
      
      printf("\n--- Dados da carta 2 ---\n");
      printf("Estado: %c\n", estado2);
@@ -104,7 +110,21 @@ printf("\n--- Dados da carta 1 ---\n");
      printf("Pontos turisticos: %d\n", pontosturisticos2);
      printf("densidade populacional: %.2f hab/km²\n", densidade2);
      printf("pib per capita: %.2f reais\n", pibpercapita2);
+
+     //Comparacoes de cartas
+     printf("\ncomparacao de cartas:\n");
+     printf("populacao: carta %d venceu (%d)\n", (populacao1>populacao2)? 1 :2, (populacao1<2));
+     printf("area: carta %d venceu (%d)\n", (area1>area2)? 1 :2, (area1<area2));
+     printf("pib: carta %d venceu (%d)\n", (pib1>pib2)? 1 :2, (pib1<pib2));
+     printf("pontosturisticos: carta %d venceu (%d)\n", (pontosturisticos1>pontosturisticos2)? 1 :2, (pontosturisticos1<pontosturisticos2));
+     printf("densidadepopulacional: carta %d venceu (%d)\n", (densidadepopulacional1>densidadepopulacional2)? 1 :2, (densidadepopulacional1<densidadepopulacional2));
+     printf("pibpercapita: carta %d venceu (%d)\n", (pibpercapita1>pibpercapita2)? 1 :2, (pibpercapita1<pibpercapita2));
+     printf("superpoder: carta %d venceu (%d)\n", (superpoder1>superpoder2)? 1 :2, (superpoder1<superpoder2));
+
      
+
+
+
 
 
 return 0;
